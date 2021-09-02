@@ -10,7 +10,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 export class DinamicosComponent {
 
   miFormulario: FormGroup = this.fb.group({
-    nombre: ['', [Validators.required, Validators.minLength(3)]],
+    nombre: [null, [Validators.required, Validators.minLength(3)]],
     favoritos: this.fb.array([
       ['Metal Gear', Validators.required],
       ['Death Stranding', Validators.required],
