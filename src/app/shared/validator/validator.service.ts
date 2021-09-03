@@ -5,7 +5,7 @@ import { AbstractControl, FormControl, ValidationErrors } from '@angular/forms';
   providedIn: 'root',
 })
 export class ValidatorService {
-  public nombreApelllidoPattern: string = '([a-zA-Z]+) ([a-zA-Z]+)';
+  public nombreApellidoPattern: string = '([a-zA-Z]+) ([a-zA-Z]+)';
   public emailPattern: string = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
 
   noDebeSerStrider(control: FormControl): ValidationErrors | null {
