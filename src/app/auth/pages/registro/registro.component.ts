@@ -9,6 +9,18 @@ import { ValidatorService } from '../../../shared/validator/validator.service';
   styles: [],
 })
 export class RegistroComponent implements OnInit {
+  get errorMsg(): string {
+    const errors = this.miFormulario.get('email')?.errors;
+    if (errors?.required) {
+      return 'El e-mail es obligatorio';
+    } else if (errors?.pattern) {
+      return 'El valor no tiene el formato de e-mail adecuado';
+    } else if (errors?.emailUtilizado) {
+      return 'El e-mail introducido ya ha sido utilizado';
+    }
+    return '';
+  }
+
   miFormulario: FormGroup = this.fb.group(
     {
       nombre: [
